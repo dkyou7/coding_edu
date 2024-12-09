@@ -11,7 +11,7 @@ class ALUTest {
         alu.setOperand1(10);
         alu.setOperand2(20);
         alu.setOPCODE("ADD");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(30, ret.getResult());
         assertEquals(0, ret.getStatus());
@@ -22,7 +22,7 @@ class ALUTest {
         alu.setOperand1(10);
         alu.setOperand2(20);
         alu.setOPCODE("MUL");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(200, ret.getResult());
         assertEquals(0, ret.getStatus());
@@ -33,7 +33,7 @@ class ALUTest {
         alu.setOperand1(10);
         alu.setOperand2(20);
         alu.setOPCODE("SUB");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(-10, ret.getResult());
         assertEquals(0, ret.getStatus());
@@ -44,7 +44,7 @@ class ALUTest {
         alu.setOperand1(-1);
         alu.setOperand2(20);
         alu.setOPCODE("SUB");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(65535, ret.getResult());
         assertEquals(1, ret.getStatus());
@@ -55,7 +55,7 @@ class ALUTest {
         alu.setOperand1(50);
         alu.setOperand2(-1);
         alu.setOPCODE("SUB");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(65535, ret.getResult());
         assertEquals(2, ret.getStatus());
@@ -66,7 +66,7 @@ class ALUTest {
         alu.setOperand1(-1);
         alu.setOperand2(20);
         alu.setOPCODE("ADD");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(65535, ret.getResult());
         assertEquals(1, ret.getStatus());
@@ -77,7 +77,7 @@ class ALUTest {
         alu.setOperand1(50);
         alu.setOperand2(-1);
         alu.setOPCODE("ADD");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(65535, ret.getResult());
         assertEquals(2, ret.getStatus());
@@ -88,7 +88,7 @@ class ALUTest {
         alu.setOperand1(-1);
         alu.setOperand2(20);
         alu.setOPCODE("MUL");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(65535, ret.getResult());
         assertEquals(1, ret.getStatus());
@@ -99,7 +99,7 @@ class ALUTest {
         alu.setOperand1(50);
         alu.setOperand2(-1);
         alu.setOPCODE("MUL");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(65535, ret.getResult());
         assertEquals(2, ret.getStatus());
@@ -110,7 +110,7 @@ class ALUTest {
         alu.setOperand1(50);
         alu.setOperand2(33);
         alu.setOPCODE("RMUL");
-        Result ret = new Result();
+        Output ret = new Output();
         alu.enableSignal(ret);
         assertEquals(65535, ret.getResult());
         assertEquals(3, ret.getStatus());
