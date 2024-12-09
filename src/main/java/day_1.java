@@ -8,11 +8,7 @@ public class day_1 {
         if (text == null || text.isEmpty()) {
             return 0;
         }
-
-        String[] values = text.split("-");
-        int[] numbers = toInts(values);
-        int result = getSum(numbers);
-        return result;
+        return getSum(toInts(text.split("-")));
     }
 
     /**
