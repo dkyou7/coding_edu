@@ -27,4 +27,9 @@ public class Result {
     public int getResult() {
         return result;
     }
+
+    public void setResultAndStatus(int result, int status) {
+        this.result = result;
+        this.status = status;
+    }
 }

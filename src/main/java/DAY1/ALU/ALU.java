@@ -19,54 +19,29 @@ public class ALU {
     }
 
     public void enableSignal(Result r) {
-        if (OPCODE.equals("ADD") == true && !OPCODE.equals("MUL") == true && !OPCODE.equals("SUB") == true) {
-            if (operand1 != -1 && operand2 != -1) {
-                int result = operand1 + operand2;
-                r.setResult(result);
-                r.setStatus(0);
-            }
-            else if (operand1 == -1) {
-                r.setResult(65535);
-                r.setStatus(1);
-            }
-            else if (operand2 == -1) {
-                r.setResult(65535);
-                r.setStatus(2);
-            }
+        switch (OPCODE) {
+            case "ADD":
+                if (operand1 == -1) r.setResultAndStatus(65535, 1);
+                if (operand2 == -1) r.setResultAndStatus(65535, 2);
+                if (operand1 != -1 && operand2 != -1) {
+                    r.setResultAndStatus(operand1 + operand2, 0);
+                }
+                return;
+            case "MUL":
+                if (operand1 == -1) r.setResultAndStatus(65535, 1);
+                if (operand2 == -1) r.setResultAndStatus(65535, 2);
+                if (operand1 != -1 && operand2 != -1) {
+                    r.setResultAndStatus(operand1 * operand2, 0);
+                }
+                return;
+            case "SUB":
+                if (operand1 == -1) r.setResultAndStatus(65535, 1);
+                if (operand2 == -1) r.setResultAndStatus(65535, 2);
+                if (operand1 != -1 && operand2 != -1) {
+                    r.setResultAndStatus(operand1 - operand2, 0);
+                }
+                return;
         }
-        else if (!OPCODE.equals("ADD") == true && OPCODE.equals("MUL") == true && !OPCODE.equals("SUB") == true) {
-            if (operand1 != -1 && operand2 != -1) {
-                int result = operand1 * operand2;
-                r.setResult(result);
-                r.setStatus(0);
-            }
-            else if (operand1 == -1) {
-                r.setResult(65535);
-                r.setStatus(1);
-            }
-            else if (operand2 == -1) {
-                r.setResult(65535);
-                r.setStatus(2);
-            }
-        }
-        else if (!OPCODE.equals("ADD") == true && !OPCODE.equals("MUL") == true && OPCODE.equals("SUB") == true) {
-            if (operand1 != -1 && operand2 != -1) {
-                int result = operand1 - operand2;
-                r.setResult(result);
-                r.setStatus(0);
-            }
-            else if (operand1 == -1) {
-                r.setResult(65535);
-                r.setStatus(1);
-            }
-            else if (operand2 == -1) {
-                r.setResult(65535);
-                r.setStatus(2);
-            }
-        }
-        else {
-            r.setResult(65535);
-            r.setStatus(3);
-        }
+        r.setResultAndStatus(65535,3);
     }
 }
