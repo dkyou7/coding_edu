@@ -1,6 +1,6 @@
 package DAY1;
 
-class SumMachine {
+public class SumMachine {
     public String getResult(String str) {
         if (isError(str)) return "ERROR";
         if (isPASS(str)) return "PASS";

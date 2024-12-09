@@ -1,7 +1,7 @@
 package DAY1;
 
 public class day_1_2 {
-    static String getResult(String str) {
+    public static String getResult(String str) {
         count result = getCount(str);
         if (result.flag1 == 1) return "ERROR";
         if (pandan1(str, result)) {
