@@ -1,3 +1,5 @@
+package DAY1;
+
 public class day_1 {
     public static int splitAndSum(String text) {
         if (isEmpty(text)) return 0;

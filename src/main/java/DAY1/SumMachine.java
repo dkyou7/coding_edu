@@ -1,3 +1,5 @@
+package DAY1;
+
 class SumMachine {
     public String getResult(String str) {
         if (isError(str)) return "ERROR";

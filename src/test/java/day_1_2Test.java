@@ -1,3 +1,4 @@
+import DAY1.day_1_2;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
