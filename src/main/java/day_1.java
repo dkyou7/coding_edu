@@ -12,6 +12,16 @@ public class day_1 {
         }
 
         String[] values = text.split("-");
+        result = getSum(values, result);
+        return result;
+    }
+
+    /**
+     * 하나의 역할을 하는 메소드로 만든다.
+     * getSum 은 하나씩 수로 바꾸어 sum을 구하는 메서드
+     * → 수로 변경하는 메서드 / sum을 구하는 메서드로 분리
+     */
+    private static int getSum(String[] values, int result) {
         for (String value : values) {
             result += Integer.parseInt(value);
         }
